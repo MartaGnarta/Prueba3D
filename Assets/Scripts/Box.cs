@@ -12,6 +12,8 @@ public class Box : MonoBehaviour
     public float speed;
     public float rotationSpeed;
 
+    public bool holding;
+
     private void OnEnable()
     {
         
@@ -35,13 +37,18 @@ public class Box : MonoBehaviour
     {
         if (_input.ver != 0)
         {
-            _controller.Move(-transform.forward * _input.ver * speed * Time.deltaTime);
-            
+            _controller.Move(transform.forward * _input.ver * speed * Time.deltaTime);            
         }
 
         if (_input.hor != 0)
         {
             transform.Rotate(0, rotationSpeed * _input.hor, 0);
         }
+
+        if (holding)
+        {
+            var targetRotation = Quaternion.LookRotation(Vector3.forward, Vector3.one);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0);
+        }        
     }
 }
