@@ -11,18 +11,7 @@ public class Box : MonoBehaviour
 
     public float speed;
     public float rotationSpeed;
-
     public bool holding;
-
-    private void OnEnable()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-        
-    }
 
     void Awake()
     {
@@ -50,5 +39,20 @@ public class Box : MonoBehaviour
             var targetRotation = Quaternion.LookRotation(Vector3.forward, Vector3.one);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0);
         }        
+    }
+
+    public void ActionLavel()
+    {
+        Debug.Log("Touching Lavel");
+    }
+
+    public void ActionButton()
+    {
+        Debug.Log("Touching Button");
+    }
+
+    public void ActionInterruptor()
+    {
+        Debug.Log("Touching Interruptor");
     }
 }
