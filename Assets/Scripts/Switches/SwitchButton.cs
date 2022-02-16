@@ -6,10 +6,12 @@ public class SwitchButton : SwitchesPax
 {
     public override void OnTriggerEnter(Collider hit)
     {
-        
+        base.OnTriggerEnter(hit);
+        base.b.ActionButton();
+
     }
-    public override void switchesAction(Collider hit)
+    public override void switchesAction()
     {
-        base.switchesAction(hit);
+        base.switchesAction();
     }
 }

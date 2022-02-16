@@ -10,11 +10,10 @@ public abstract class SwitchesPax : MonoBehaviour
     public virtual void OnTriggerEnter(Collider hit)
     {
         onRange = true;
-        hit.gameObject.TryGetComponent<Box>(out Box b);        
-        switchesAction(hit);
+        hit.gameObject.TryGetComponent<Box>(out Box b);
     }
 
-    public virtual void switchesAction(Collider hit)
+    public virtual void switchesAction()
     {
         if (onRange)
         {
