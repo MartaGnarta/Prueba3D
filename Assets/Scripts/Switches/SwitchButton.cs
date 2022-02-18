@@ -6,12 +6,15 @@ public class SwitchButton : SwitchesPax
 {
     public override void OnTriggerEnter(Collider hit)
     {
-        base.OnTriggerEnter(hit);
-        base.b.ActionButton();
-
+        base.OnTriggerEnter(hit);       
     }
-    public override void switchesAction()
-    {
-        base.switchesAction();
+    public override void switchesAction(Collider hit)
+    {      
+        if (onRange)
+        {
+            Debug.Log("He tocao el botón");
+            hit.gameObject.TryGetComponent<Box>(out Box b);
+            b.ActionButton();
+        }
     }
 }

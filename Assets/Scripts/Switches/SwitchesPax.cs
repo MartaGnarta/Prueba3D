@@ -10,14 +10,15 @@ public abstract class SwitchesPax : MonoBehaviour
     public virtual void OnTriggerEnter(Collider hit)
     {
         onRange = true;
-        hit.gameObject.TryGetComponent<Box>(out Box b);
+        switchesAction(hit);
+        Debug.Log("touching");
     }
 
-    public virtual void switchesAction()
+    public virtual void OnTriggerExit(Collider hit)
     {
-        if (onRange)
-        {
-            Debug.Log("He tocao el botón");
-        }
+        onRange = false;
+        Debug.Log("not touching");
     }
+
+    public abstract void switchesAction(Collider hit);
 }

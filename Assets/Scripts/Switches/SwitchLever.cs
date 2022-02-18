@@ -6,16 +6,15 @@ public class SwitchLever : SwitchesPax
 {
     public override void OnTriggerEnter(Collider hit)
     {
-        onRange = true;
-        hit.gameObject.TryGetComponent<Box>(out Box b);
-        b.ActionLavel();
-        switchesAction(hit);
+        base.OnTriggerEnter(hit);
     }
     public override void switchesAction(Collider hit)
     {
         if (onRange)
         {
             Debug.Log("He tocao el level");
+            hit.gameObject.TryGetComponent<Box>(out Box b);
+            b.ActionLavel();
         }
     }
 }
