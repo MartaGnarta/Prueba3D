@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FSM;
 
-public class JumpAction : MonoBehaviour
+[CreateAssetMenu(menuName = "FSM/Pax/Actions/Jump")]
+public class JumpAction : FSM.Action
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Act(Controller controller)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        controller.SetAnimation("Jump", true);
+        //controller.SetAnimation("attack", false);
+        //controller.SetAnimation("Shot", false);
     }
 }

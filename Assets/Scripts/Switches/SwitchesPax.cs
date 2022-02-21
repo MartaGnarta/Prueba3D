@@ -7,17 +7,15 @@ public abstract class SwitchesPax : MonoBehaviour
     protected int id;
     protected bool onRange;
 
-    public virtual void OnTriggerEnter(Collider hit)
+    public void OnTriggerEnter(Collider hit)
     {
         onRange = true;
         switchesAction(hit);
-        Debug.Log("touching");
     }
 
-    public virtual void OnTriggerExit(Collider hit)
+    public void OnTriggerExit(Collider hit)
     {
         onRange = false;
-        Debug.Log("not touching");
     }
 
     public abstract void switchesAction(Collider hit);

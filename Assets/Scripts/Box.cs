@@ -13,12 +13,15 @@ public class Box : MonoBehaviour
     public float rotationSpeed;
     public bool holding;
 
+    public Light light;
+
     void Awake()
     {
         _input = GetComponent<InputSystemKeyboard>();
         _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         _controller = GetComponent<CharacterController>();
+        light = GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -43,16 +46,16 @@ public class Box : MonoBehaviour
 
     public void ActionLavel()
     {
-        Debug.Log("Touching Lavel");
+        light.intensity = 100f;
     }
 
     public void ActionButton()
     {
-        Debug.Log("Touching Button");
+        light.intensity = 0f;
     }
 
     public void ActionInterruptor()
     {
-        Debug.Log("Touching Interruptor");
+        light.intensity = 100f;
     }
 }

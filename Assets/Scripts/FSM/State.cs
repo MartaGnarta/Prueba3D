@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FSM
 {
-    [CreateAssetMenu (menuName = "FSM/Carnation/State")]
+    [CreateAssetMenu (menuName = "FSM/Pax/State")]
     public class State : ScriptableObject
     {
         public Action[] actions; // En un state se ejecutam varias acciones

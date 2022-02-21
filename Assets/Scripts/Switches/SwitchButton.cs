@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class SwitchButton : SwitchesPax
 {
-    public override void OnTriggerEnter(Collider hit)
-    {
-        base.OnTriggerEnter(hit);       
-    }
     public override void switchesAction(Collider hit)
     {      
         if (onRange)

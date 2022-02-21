@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FSM;
 
-public class CrouchAction : MonoBehaviour
+[CreateAssetMenu(menuName = "FSM/Pax/Actions/Crouch")]
+public class CrouchAction : FSM.Action
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Act(Controller controller)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        controller.SetAnimation("Crouch", true);
+        //controller.SetAnimation("attack", false);
+        //controller.SetAnimation("Shot", false);
     }
 }
