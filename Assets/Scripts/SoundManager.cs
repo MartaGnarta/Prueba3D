@@ -9,6 +9,6 @@ public class SoundManager : MonoBehaviour
     
     public void SetLevel(float sliderValue)
     {
-        mixer.SetFloat("SoundVol", Mathf.Log10(sliderValue) * 20);
+        mixer.SetFloat("SoundVol", sliderValue);
     }
 }
